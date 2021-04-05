@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.ar.sceneform.plugin'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.example.ar_proba"
+        minSdkVersion 28
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.ar:core:1.7.0'
+    implementation "com.google.ar.sceneform.ux:sceneform-ux:1.7.0"
+    implementation 'com.google.ar.sceneform:core:1.7.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+}
+
+
+sceneform.asset('sampledata/shrek/model.obj',
+        'default',
+        'sampledata/shrek/model.sfa',
+        'src/main/assets/model')
+
+sceneform.asset('sampledata/nules/it.obj',
+        'default',
+        'sampledata/nules/it.sfa',
+        'src/main/assets/it')
+
+
+sceneform.asset('sampledata/core/2080.obj',
+        'default',
+        'sampledata/core/2080.sfa',
+        'src/main/assets/2080')
+
+
+
+sceneform.asset('sampledata/core/cpu.obj',
+        'default',
+        'sampledata/core/cpu.sfa',
+        'src/main/assets/cpu')
+
+sceneform.asset('sampledata/core/culer.obj',
+        'default',
+        'sampledata/core/culer.sfa',
+        'src/main/assets/culer')
+
+
+
+sceneform.asset('sampledata/core/hdd.obj',
+        'default',
+        'sampledata/core/hdd.sfa',
+        'src/main/assets/hdd')
+
+sceneform.asset('sampledata/core/motherboard.obj',
+        'default',
+        'sampledata/core/motherboard.sfa',
+        'src/main/assets/motherboard')
+
+
+
